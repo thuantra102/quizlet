@@ -14,7 +14,7 @@ public class FolderDTO extends GeneralDTO{
     String nameFolderTopic;
     String descriptionFolderTopic;
     String userName;
-    Long idUser;
+    Integer idUser;
 
     public FolderDTO(Folder folder) {
         this.setId(folder.getId());

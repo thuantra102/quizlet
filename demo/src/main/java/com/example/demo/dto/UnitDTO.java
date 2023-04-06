@@ -15,20 +15,20 @@ import org.springframework.stereotype.Component;
 public class UnitDTO extends GeneralDTO{
     private String nameUnit;
     private String descriptionUnit;
-    private String statusUnit;
-    private Integer editUnit;
+    private Integer idDisplayStatus;
+    private Integer idEditStatus;
     private String topicName;
     private Long topicId;
     private String userName;
-    private Long idUser;
+    private Integer idUser;
 
     public UnitDTO(Unit unit) {
         this.setId(unit.getId());
         this.setTimeCreated(unit.getTimeCreated());
         this.nameUnit = unit.getNameUnit();
         this.descriptionUnit = unit.getDescriptionUnit();
-        this.statusUnit = unit.getStatusUnit();
-        this.editUnit = unit.getEditUnit();
+        this.idDisplayStatus = unit.getDisplayStatus().getId();
+        this.idEditStatus = unit.getEditStatus().getId();
         this.topicName = unit.getTopic().getNameTopic();
         this.topicId = unit.getTopic().getId();
         this.userName = unit.getUser().getUserName();

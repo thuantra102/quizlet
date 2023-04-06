@@ -20,7 +20,6 @@ public class DetailUnit extends GeneralEntity {
     @JoinColumn(name = "id_unit" , nullable = false)
     Unit unit;
 
-
     public DetailUnit(DetailUnitDTO detailUnitDTO) {
         this.setId(detailUnitDTO.getId());
         this.setTimeCreated(detailUnitDTO.getTimeCreated());
@@ -28,6 +27,5 @@ public class DetailUnit extends GeneralEntity {
         this.definition = detailUnitDTO.getDefinition();
         this.image = detailUnitDTO.getImage();
         this.unit = new Unit(detailUnitDTO.getUnitId());
-
     }
 }

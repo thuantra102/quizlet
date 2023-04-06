@@ -12,7 +12,7 @@ import java.util.List;
 public interface AbstractCRUDApi<ENTITY extends GeneralEntity, DTO extends GeneralDTO> {
     DTO save(DTO dto);
     DTO getById(Integer id);
-    Page<DTO> list(Pageable pageable);
+    Page<DTO> list(Integer index);
     boolean delete(Integer id);
 
 }

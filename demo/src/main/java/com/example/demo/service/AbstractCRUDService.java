@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.GenericTypeResolver;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 
 
@@ -64,8 +65,8 @@ public abstract class AbstractCRUDService<ENTITY extends GeneralEntity, DTO exte
     }
 
     @Override
-    public Page<DTO> list(Pageable pageable) {
-        return repository.findAll(pageable).map(entity -> converter.convertDetail(entity));
+    public Page<DTO> list(Integer index) {
+        return repository.findAll(PageRequest.of(index,3)).map(entity -> converter.convertDetail(entity));
     }
 
     @Override

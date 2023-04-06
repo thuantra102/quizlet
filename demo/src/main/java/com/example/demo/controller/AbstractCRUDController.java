@@ -32,8 +32,8 @@ public class AbstractCRUDController<ENTITY extends GeneralEntity, DTO extends Ge
     }
 
     @GetMapping("/list")
-    public Page<DTO> list(@PageableDefault(size = 1) Pageable pageable) {
-        return api.list(pageable);
+    public Page<DTO> list(@RequestParam(value = "index",defaultValue = "0") Integer index) {
+        return api.list(index);
     }
 
     @DeleteMapping("/{id}")

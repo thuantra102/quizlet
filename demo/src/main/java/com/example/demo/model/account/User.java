@@ -1,9 +1,11 @@
 package com.example.demo.model.account;
 
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
+import javax.persistence.criteria.CriteriaBuilder;
 import java.sql.Date;
 
 @Entity
@@ -16,7 +18,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    Integer id;
     String userName;
     String password;
     String email;
@@ -26,10 +28,12 @@ public class User {
     Integer isDark;
     Integer level;
     @Column(name = "timeCreated")
-    @CreatedDate
+    @CreationTimestamp
     Date timeCreated;
 
-    public User(Long id) {
+
+
+    public User(Integer id) {
         this.id = id;
     }
 }
