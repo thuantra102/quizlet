@@ -21,6 +21,6 @@ public class FolderDTO extends GeneralDTO{
         this.setTimeCreated(folder.getTimeCreated());
         this.nameFolderTopic = folder.getNameFolderTopic();
         this.descriptionFolderTopic = folder.getDescriptionFolderTopic();
-        this.userName = folder.getUser().getUserName();
+        this.userName = folder.getUser().getUsername();
     }
 }

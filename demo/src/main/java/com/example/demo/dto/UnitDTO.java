@@ -31,6 +31,6 @@ public class UnitDTO extends GeneralDTO{
         this.idEditStatus = unit.getEditStatus().getId();
         this.topicName = unit.getTopic().getNameTopic();
         this.topicId = unit.getTopic().getId();
-        this.userName = unit.getUser().getUserName();
+        this.userName = unit.getUser().getUsername();
     }
 }

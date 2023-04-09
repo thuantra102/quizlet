@@ -1,5 +1,6 @@
 package com.example.demo.model.account;
 
+import com.example.demo.dto.UserDTO;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.data.annotation.CreatedDate;
@@ -19,7 +20,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
-    String userName;
+    String username;
     String password;
     String email;
     Date birthday;
@@ -35,5 +36,10 @@ public class User {
 
     public User(Integer id) {
         this.id = id;
+    }
+
+    public User(UserDTO userDTO) {
+        this.username = userDTO.getUserName();
+        this.password = userDTO.getPassWord();
     }
 }
