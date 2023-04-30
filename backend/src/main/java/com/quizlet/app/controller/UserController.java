@@ -10,6 +10,9 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @RestController
 @CrossOrigin("*")
 public class UserController {
@@ -30,11 +33,13 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody UserDTO userDTO) {
+    public ResponseEntity<Map<String,String>> login(@RequestBody UserDTO userDTO) {
         UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(userDTO.getUsername(), userDTO.getPassword());
         authenticationManager.authenticate(token);
+        Map<String,String> map = new HashMap<>();
         String jwtToken = jwtUtil.generate(userDTO.getUsername());
-        return ResponseEntity.ok(jwtToken);
+        map.put("token", jwtToken);
+        return ResponseEntity.ok(map);
     }
 
 }

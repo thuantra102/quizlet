@@ -1,0 +1,13 @@
+<h3>Login</h3>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <p>UserName</p>
+  <input placeholder="username" formControlName="username" type="text">
+  <p>PassWord</p>
+  <input placeholder="password" formControlName="password" type="password">
+  <br>
+  <br>
+  <button type="submit">Login</button>
+</form>
+
+<p>Get List Folder</p>
+<button (click)="getList()">Get List</button>

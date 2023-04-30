@@ -41,4 +41,9 @@ public class User {
         this.password = userDTO.getPassword();
         this.email = userDTO.getEmail();
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
 }
